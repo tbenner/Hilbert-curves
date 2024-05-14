@@ -1,0 +1,45 @@
+﻿<Window x:Class="Hilbert.Dialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Hilbert"
+        mc:Ignorable="d"
+        Title="Hilbert Parameters" Height="140" Width="420" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.75*"/>
+            <ColumnDefinition Width="0.5*"/>
+            <ColumnDefinition Width="0.6*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Label Grid.Row="0" Content="Max size"/>
+        <Label Grid.Row="1" Content="Recursion depth"/>
+        <Label Grid.Row="2" Content="Line color"/>
+        <Label Grid.Row="3" Content="Background color"/>
+
+        <TextBox Grid.Row="0" Grid.Column="1" TabIndex="0" Text="{Binding Path=MaxLength}"/>
+        <TextBox Grid.Row="1" Grid.Column="1" TabIndex="1" Text="{Binding Path=RecursionDepth}"/>
+        <ComboBox Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" TabIndex="2" Name="cbBrushes" SelectedItem="{Binding Path=ColorItem}"/>
+        <ComboBox Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" TabIndex="3" Name="cbBackBrushes" SelectedItem="{Binding Path=BackColorItem}"/>
+
+        <WrapPanel Grid.Row="1" Grid.Column="3" Grid.RowSpan="2">
+            <WrapPanel.Resources>
+                <Style TargetType="Button">
+                    <Setter Property="HorizontalAlignment" Value="Center"/>
+                    <Setter Property="Margin" Value="24,0,0,8"/>
+                    <Setter Property="Padding" Value="3"/>
+                </Style>
+            </WrapPanel.Resources>
+            <Button x:Name="btnOk" Content="Ok" IsDefault="True" TabIndex="4" Click="btnOk_Click"/>
+            <Button x:Name="btnCancel" Content="Cancel" IsCancel="True" TabIndex="5" Click="btnCancel_Click"/>
+        </WrapPanel>
+    </Grid>
+</Window>

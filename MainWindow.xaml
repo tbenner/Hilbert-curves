@@ -1,0 +1,25 @@
+﻿<Window x:Class="Hilbert.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Hilbert"
+        mc:Ignorable="d"
+        Title="Hilbert curve" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+    <DockPanel LastChildFill="True">
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="File">
+                <MenuItem Name="fileNew" Header="New" Click="fileNew_Click"/>
+                <MenuItem Name="fileSavePoints" Header="Save point data" Click="fileSavePoints_Click"/>
+                <MenuItem Name="fileSaveImage" Header="Save image" Click="fileSaveImage_Click"/>
+                <MenuItem Name="fileExit" Header="Exit" Click="fileExit_Click"/>
+            </MenuItem>
+            <MenuItem Header="Hilbert">
+                <MenuItem Name="hilbertRun" Header="Run" Click="hilbertRun_Click"/>
+            </MenuItem>
+        </Menu>
+        <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+            <Canvas x:Name="canvas"/>
+        </ScrollViewer>
+    </DockPanel>
+</Window>

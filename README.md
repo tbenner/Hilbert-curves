@@ -1,5 +1,5 @@
 # Hilbert-curves
-Program for drawing Hilbert curves using WPF in C#
+Program for drawing Hilbert curves using WPF in C#.
 This program draws a hilbert curve to the size and recursion depth you specify.
 I used the article I found below to base the Hilbert algorithm on.
 https://www.fundza.com/algorithmic/space_filling/hilbert/basics/
